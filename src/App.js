@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { Layout } from "./conponents/header";
 
 function App() {
+  const el = React.useRef(null);
+  React.useEffect(() => {
+    console.log(el.current);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav className="nav">nav</nav>
+      <Layout headerRef={el} />
+      <body className="body">body</body>
+      <footer className="footer">footer</footer>
+    </>
   );
 }
 
